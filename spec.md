@@ -92,7 +92,7 @@ URL:
 * edit
 * update
 * destroy
-### routes
+### routes (all 7)
 * get '/users/:id/sends', to: 'sends#index'
 * post '/users/:id/sends/:id', to: 'sends#show' 
 * get '/users/:id/sends/new', to: 'sends#new' 
@@ -115,21 +115,6 @@ n/a
 ### routes
 n/a (part of problems?)
 
-
-## Comments
-### controller
-* new
-* create
-* edit
-* update
-* destroy
-### routes
-* get '/users/:id/problems/:id/comments/new', to: 'comments#new' 
-* post '/users/:id/problems/:id/comments', to: 'comments#create' 
-* get '/users/:id/problems/:id/comments/:id/edit', to: 'comments#edit' 
-* patch '/users/:id/problems/:id/comments/:id', to: 'comments#update' 
-* delete '/users/:id/problems/:id/comments/:id', to: 'comments#destroy' 
-
 ## Rewards
 ### Controller
 * index
@@ -146,4 +131,20 @@ n/a (part of problems?)
 * index
 * new
 * show
+
+## Comments
+### controller
+* new
+* create
+* edit
+* update
+* destroy
+### routes
+* get '/users/:id/problems/:id/comments/new', to: 'comments#new' 
+* post '/users/:id/problems/:id/comments', to: 'comments#create' 
+* get '/users/:id/problems/:id/comments/:id/edit', to: 'comments#edit' 
+* patch '/users/:id/problems/:id/comments/:id', to: 'comments#update' 
+* delete '/users/:id/problems/:id/comments/:id', to: 'comments#destroy' 
+
+
 
