@@ -67,3 +67,53 @@ user_1.save!
 user_2.save!
 user_3.save!
 
+
+problem_data = [
+  # Sent by User 1
+  ["Red V5", "red", "V5", 5, '<blockquote class="imgur-embed-pub" lang="en" data-id="f6jea5L"><a href="//imgur.com/f6jea5L">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["compression", "slab"], user_1.id],
+  ["Black V3", "black", "V3", 3, '<blockquote class="imgur-embed-pub" lang="en" data-id="yE9bcDH"><a href="//imgur.com/yE9bcDH">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "slab"], user_1.id],
+  ["White V4", "white", "V4", 4, '<blockquote class="imgur-embed-pub" lang="en" data-id="qhovyFu"><a href="//imgur.com/qhovyFu">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["jugs", "powerful", "flexible"], user_1.id],
+  ["Yellow V4", "yellow", "V4", 4, '<blockquote class="imgur-embed-pub" lang="en" data-id="whnG7Sd"><a href="//imgur.com/whnG7Sd">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "flexible", "balance", "slab"], user_1.id],
+  ["Black V4", "black", "V4", 4, '<blockquote class="imgur-embed-pub" lang="en" data-id="WlIv118"><a href="//imgur.com/WlIv118">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["body tension", "flexible", "mantle"], user_1.id],
+  # Sent by User 2
+  ["Blue V6", "blue", "V6", 6, '<blockquote class="imgur-embed-pub" lang="en" data-id="WfBSvVr"><a href="//imgur.com/WfBSvVr">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "body tension", "flexible"], user_2.id],
+  ["Black V6", "black", "V6", 6, '<blockquote class="imgur-embed-pub" lang="en" data-id="Tz1Ea67"><a href="//imgur.com/Tz1Ea67">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["pinches", "body tension", "powerful", "overhang"], user_2.id],
+  ["Black V5", "black", "V5", 5, '<blockquote class="imgur-embed-pub" lang="en" data-id="jod5gFX"><a href="//imgur.com/jod5gFX">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["body tension", "compression", "powerful"], user_2.id],
+  ["Yellow V7", "yellow", "V7", 7, '<blockquote class="imgur-embed-pub" lang="en" data-id="5D6KV7C"><a href="//imgur.com/5D6KV7C">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "pinches", "powerful", "overhang"], user_2.id],
+  ["Pink V7", "pink", "V7", 7, '<blockquote class="imgur-embed-pub" lang="en" data-id="pKogmXZ"><a href="//imgur.com/pKogmXZ">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "body tension", "powerful"], user_2.id],
+  # Sent by User 3
+  ["Blue V8", "blue", "V8", 8, '<blockquote class="imgur-embed-pub" lang="en" data-id="mbyzIOA"><a href="//imgur.com/mbyzIOA">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "body tension", "powerful"], user_3.id],
+  ["Pink V8", "pink", "V8", 8, '<blockquote class="imgur-embed-pub" lang="en" data-id="Rc01Obn"><a href="//imgur.com/Rc01Obn">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "slopers", "pinches", "body tension"], user_3.id],
+  ["Blue V9", "blue", "V9", 9, '<blockquote class="imgur-embed-pub" lang="en" data-id="mBoDq6d"><a href="//imgur.com/mBoDq6d">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "body tension", "powerful"], user_3.id]
+]
+
+base_date = '3/1/2020'.to_date
+
+# Create dummy Problems
+puts "Creating dummy Problems..."
+problem_data.each do |data|
+  p = Problem.create(
+    name: date [0],
+    color: data[1],
+    grade: data[2],
+    points: data[3]
+    image: data[4],
+    created_at: base_date,
+    user_id: data[6],
+  )
+
+  style_names = data[5]
+  puts "Adding #{style_names} styles to problem #{p.id}"
+
+  # retutn array of style instances for each problem
+  styles_with_these_names = style_names.map { |name| Style.find_by(name: name) }
+  # Create ProblemStyle to make the many-to-many relation
+  styles_with_these_names.each do |style|
+    ps = ProblemStyle.new
+    ps.problem_id = p.id
+    ps.style_id = style.id
+    ps.save!
+  end
+end
+
+
