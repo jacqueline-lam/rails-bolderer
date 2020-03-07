@@ -83,7 +83,7 @@ URL:
 * post 'problems', to: 'problems#create' 
 
 
-## UserSends
+## Sends
 ### controller
 * index (by everyone)
 * new
@@ -93,13 +93,13 @@ URL:
 * update
 * destroy
 ### routes
-* get '/users/:id/user_sends', to: 'problems#index'
-* post '/users/:id/user_sends/:id', to: 'user_sends#show' 
-* get '/users/:id/user_sends/new', to: 'user_sends#new' 
-* post '/users/:id/user_sends', to: 'user_sends#create' 
-* get '/users/:id/user_sends/:id/edit', to: 'user_sends#edit' 
-* patch '/users/:id/user_sends/:id', to: 'user_sends#update' 
-* delete '/users/:id/user_sends/:id', to: 'user_sends#destroy' 
+* get '/users/:id/sends', to: 'sends#index'
+* post '/users/:id/sends/:id', to: 'sends#show' 
+* get '/users/:id/sends/new', to: 'sends#new' 
+* post '/users/:id/sends', to: 'sends#create' 
+* get '/users/:id/sends/:id/edit', to: 'sends#edit' 
+* patch '/users/:id/sends/:id', to: 'sends#update' 
+* delete '/users/:id/sends/:id', to: 'sends#destroy' 
 
 ## Styles
 ### controller
