@@ -1,0 +1,2 @@
+class ProblemStyle < ApplicationRecord
+end

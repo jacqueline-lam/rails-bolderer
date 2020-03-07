@@ -76,18 +76,30 @@ URL:
 * new
 * show
 * create
+### routes
+* get '/problems', to: 'problems#index'
+* post 'problems/:id', to: 'problems#show' #=> display user_sends logs of this problem
+* get 'problems/new', to: 'problems#new' 
+* post 'problems', to: 'problems#create' 
+
+
+## UserSends
+### controller
+* index (by everyone)
+* new
+* show
+* create
 * edit
 * update
 * destroy
 ### routes
-* get '/users/:id/problems', to: 'problems#index'
-* post '/users/:id/problems/:id', to: 'problems#show' 
-* get '/users/:id/problems/new', to: 'problems#new' 
-* post '/users/:id/problems', to: 'problems#create' 
-* get '/users/:id/problems/:id/edit', to: 'problems#edit' 
-* patch '/users/:id/problems/:id', to: 'problems#update' 
-* delete '/users/:id/problems/:id', to: 'problems#destroy' 
-
+* get '/users/:id/user_sends', to: 'problems#index'
+* post '/users/:id/user_sends/:id', to: 'user_sends#show' 
+* get '/users/:id/user_sends/new', to: 'user_sends#new' 
+* post '/users/:id/user_sends', to: 'user_sends#create' 
+* get '/users/:id/user_sends/:id/edit', to: 'user_sends#edit' 
+* patch '/users/:id/user_sends/:id', to: 'user_sends#update' 
+* delete '/users/:id/user_sends/:id', to: 'user_sends#destroy' 
 
 ## Styles
 ### controller
