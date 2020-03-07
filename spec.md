@@ -38,17 +38,20 @@ p[ Your application must provide standard user authentication, including signup,
 
 [x] Do not use scaffolding to build your project. Your goal here is to learn. Scaffold is a way to get up and running quickly, but learning a lot is not one of the benefits of scaffolding.
 
+# Blog post
+URL: 
+
 # Feature requests
 * Scope method: filter Problem by problem.grade, style.name, problem.date (problems_sent_this_month)
-* Model method: return rating of a Cafe based on average rating associated Reviews 
+* Model method: return points of a User based on sum of all the problems' points they earned this month?
 * View helper method: convert style array into a string
 * Helper method: 
 
 * Nested resources: 
-** users/:id/rewards (all rewards available) and users/:id/rewards/new (admin to create new reward options to user)
-** user/:id/problems ('problems#index')
-** user/:id/problems/new ('problems#new')
-** users/:id/problems/:id/comments/new ('comments#new')
+  * users/:id/rewards (all rewards available) and users/:id/rewards/new (admin to create new reward options to user)
+  * user/:id/problems ('problems#index')
+  * user/:id/problems/new ('problems#new')
+  * users/:id/problems/:id/comments/new ('comments#new')
 
 
 # To do:
@@ -131,3 +134,4 @@ n/a (part of problems?)
 * index
 * new
 * show
+
