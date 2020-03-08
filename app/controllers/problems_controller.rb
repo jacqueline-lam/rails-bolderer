@@ -11,6 +11,8 @@ class ProblemsController < ApplicationController
     @problem = Problem.new(problem_params)
     if @problem.save
       redirect_to problems_path
+    else
+      render :new
     end
   end
 
