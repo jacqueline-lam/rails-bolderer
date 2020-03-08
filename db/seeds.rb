@@ -102,16 +102,16 @@ problem_data.each do |data|
   )
 
   wall_name = data[6]
-  puts "Adding wall_id to problem #{p.id]}"
+  puts "Adding wall_id to problem #{p.id}."
   p.wall_id = Wall.find_by(name: wall_name).id
   p.save!
 
   # manually change created_at date:
-  puts "Updating created_at timestamp to #{base_date}"
+  puts "Updating created_at timestamp to #{base_date}."
   p.update(created_at: base_date)
 
   style_names = data[5]
-  puts "Adding #{style_names} styles to problem #{p.id}"
+  puts "Adding #{style_names} styles to problem #{p.id}."
   # retutn array of style instances for each problem
   styles_with_these_names = style_names.map { |name| Style.find_by(name: name) }
   # Create ProblemStyle to make the many-to-many relation
@@ -130,25 +130,25 @@ send_data = [
   [base_date + 7.day, 5, 'No image by user', user_1.id, "Red V5"],
   [base_date + 7.day, 1, 'No image by user', user_1.id, "Black V3"],
   [base_date + 1.day, 2, 'No image by user', user_1.id, "White V4"],
-  [base_date + 3.day, 1, 'No image by user', user_1.id] "Yellow V4",
-  [base_date + 5.day, 1, 'No image by user', user_1.id] "Black V4",
+  [base_date + 3.day, 1, 'No image by user', user_1.id, "Yellow V4"],
+  [base_date + 5.day, 1, 'No image by user', user_1.id, "Black V4"],
   # Sent by User 2
   [base_date, 3, '<blockquote class="imgur-embed-pub" lang="en" data-id="WfBSvVr"><a href="//imgur.com/WfBSvVr">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id, "Blue V6"],
   [base_date, 5, '<blockquote class="imgur-embed-pub" lang="en" data-id="Tz1Ea67"><a href="//imgur.com/Tz1Ea67">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id, "Black V6"],
   [base_date + 1.day, 1, 'No image by user', user_2.id, "Black V5"],
-  [base_date + 3.day, 6, '<blockquote class="imgur-embed-pub" lang="en" data-id="5D6KV7C"><a href="//imgur.com/5D6KV7C">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id,  "Yellow V7"],
+  [base_date + 3.day, 6, '<blockquote class="imgur-embed-pub" lang="en" data-id="5D6KV7C"><a href="//imgur.com/5D6KV7C">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id, "Yellow V7"],
   [base_date + 5.day, 8, '<blockquote class="imgur-embed-pub" lang="en" data-id="pKogmXZ"><a href="//imgur.com/pKogmXZ">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id, "Pink V7"],
   # Sent by User 3
   [base_date + 3.day, 3, 'No image by user', user_3.id, "Blue V8"],
   [base_date + 3.day, 5, 'No image by user', user_3.id, "Pink V8"],
   [base_date + 5.day, 7, 'No image by user', user_3.id, "Blue V9"],
-],
+]
 
 
 # Create dummy Sends
 puts "Creating dummy Sends..."
 
-problem_data.each do |data|
+send_data.each do |data|
   s = Send.create(
     date_sent: data[0],
     attempts: data[1],
@@ -161,3 +161,5 @@ problem_data.each do |data|
   s.problem_id = Problem.find_by(name: problem_name).id
   s.save!
 end
+
+puts "All dummy data have been seeded."
