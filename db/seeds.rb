@@ -77,11 +77,11 @@ problem_data = [
   ["Yellow V4", "yellow", "V4", 4, '<blockquote class="imgur-embed-pub" lang="en" data-id="whnG7Sd"><a href="//imgur.com/whnG7Sd">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "flexible", "balance", "slab"], "Logo"],
   ["Black V4", "black", "V4", 4, '<blockquote class="imgur-embed-pub" lang="en" data-id="WlIv118"><a href="//imgur.com/WlIv118">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["body tension", "flexible", "mantle"], "Positivity"],
   # Sent by User 2
-  ["Blue V6", "blue", "V6", 6, '<blockquote class="imgur-embed-pub" lang="en" data-id="WfBSvVr"><a href="//imgur.com/WfBSvVr">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "body tension", "flexible"], "Pineapple"],
-  ["Black V6", "black", "V6", 6, '<blockquote class="imgur-embed-pub" lang="en" data-id="Tz1Ea67"><a href="//imgur.com/Tz1Ea67">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["pinches", "body tension", "powerful", "overhang"], "Barrel"],
+  ["Blue V6", "blue", "V6", 6, 'No original image available', ["crimps", "body tension", "flexible"], "Pineapple"],
+  ["Black V6", "black", "V6", 6, 'No original image available', ["pinches", "body tension", "powerful", "overhang"], "Barrel"],
   ["Black V5", "black", "V5", 5, '<blockquote class="imgur-embed-pub" lang="en" data-id="jod5gFX"><a href="//imgur.com/jod5gFX">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["body tension", "compression", "powerful"], "Pineapple"],
-  ["Yellow V7", "yellow", "V7", 7, '<blockquote class="imgur-embed-pub" lang="en" data-id="5D6KV7C"><a href="//imgur.com/5D6KV7C">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "pinches", "powerful", "overhang"], "Pipe"],
-  ["Pink V7", "pink", "V7", 7, '<blockquote class="imgur-embed-pub" lang="en" data-id="pKogmXZ"><a href="//imgur.com/pKogmXZ">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "body tension", "powerful"], "Pineapple"],
+  ["Yellow V7", "yellow", "V7", 7, 'No original image available', ["crimps", "pinches", "powerful", "overhang"], "Pipe"],
+  ["Pink V7", "pink", "V7", 7, 'No original image available', ["crimps", "body tension", "powerful"], "Pineapple"],
   # Sent by User 3
   ["Blue V8", "blue", "V8", 8, '<blockquote class="imgur-embed-pub" lang="en" data-id="mbyzIOA"><a href="//imgur.com/mbyzIOA">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "body tension", "powerful"], "Pipe"],
   ["Pink V8", "pink", "V8", 8, '<blockquote class="imgur-embed-pub" lang="en" data-id="Rc01Obn"><a href="//imgur.com/Rc01Obn">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', ["crimps", "slopers", "pinches", "body tension"], "Pipe"],
@@ -137,7 +137,7 @@ send_data = [
   [base_date, 5, '<blockquote class="imgur-embed-pub" lang="en" data-id="Tz1Ea67"><a href="//imgur.com/Tz1Ea67">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id, "Black V6"],
   [base_date + 1.day, 1, 'No image by user', user_2.id, "Black V5"],
   [base_date + 3.day, 6, '<blockquote class="imgur-embed-pub" lang="en" data-id="5D6KV7C"><a href="//imgur.com/5D6KV7C">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id,  "Yellow V7"],
-  [base_date + 5.day, 8, 'No image by user', user_2.id, "Pink V7"],
+  [base_date + 5.day, 8, '<blockquote class="imgur-embed-pub" lang="en" data-id="pKogmXZ"><a href="//imgur.com/pKogmXZ">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>', user_2.id, "Pink V7"],
   # Sent by User 3
   [base_date + 3.day, 3, 'No image by user', user_3.id, "Blue V8"],
   [base_date + 3.day, 5, 'No image by user', user_3.id, "Pink V8"],
