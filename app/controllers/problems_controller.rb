@@ -8,6 +8,10 @@ class ProblemsController < ApplicationController
   end
 
   def create
+    @problem = Problem.new(problem_params)
+    if @problem.save
+      redirect_to problems_path
+    end
   end
 
   def show
@@ -15,7 +19,7 @@ class ProblemsController < ApplicationController
 
   private
 
-  def problems_params
+  def problem_params
     params.require(:problem).permit(:wall_id, :name, :color, :grade, :image, :style_ids:[])
   end
 end
