@@ -37,4 +37,9 @@ class Problem < ApplicationRecord
     "V12",
     "V13"
   ]
+
+  # Query Problem table for all problem instances
+  def self.problems_by_date
+    Problem.all.order('date desc')
+  end
 end
